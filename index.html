@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple Javascript Text To Speech</title>
+	</head>
+	<body>
+		<input type="text" id="tts" placeholder="Enter Your Text">
+		<button type="button" onclick="say()">Say It!</button>
+		<script type="text/javascript">
+			function say() {
+				let msg = document.getElementById("tts").value;
+				let speech = new SpeechSynthesisUtterance();
+				speech.lang = "en-US"; // Text Language
+				speech.text = msg; // The text you want to convert to speech
+				speech.volume = 1; // Volume
+				speech.rate = 1; // Speed
+				speech.pitch = 1; // Pitch
+				window.speechSynthesis.speak(speech);
+			}
+		</script>
+	</body>
+</html>
